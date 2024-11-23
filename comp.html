@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .complaints-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .complaints-table th, .complaints-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        .complaints-table th {
+            background-color: #f2f2f2;
+        }
+        .response {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Post a Complaint</h2>
+        <div class="form-container">
+            <form action="comp" method="post">
+                <textarea name="complaint" placeholder="Write your complaint here..." required></textarea><br>
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+
+        <h3>Your Complaints</h3>
+        <table class="complaints-table">
+            <thead>
+                <tr>
+                    <th>Complaint</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody id="complaintsTableBody">
+                <!-- Complaints will be loaded dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        window.onload = function() {
+            fetchComplaints();
+        }
+
+        function fetchComplaints() {
+            fetch('comp',{method:'get'})
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('complaintsTableBody').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching complaints:', error));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Varun IT Solutions</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: orangered;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #contact-form, #feedback form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input, form textarea, form select, form button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: orangered;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="logo">Varun IT Solutions</div>
+    <nav>
+        <a href="#contact-form">Contact Form</a>
+        <a href="#locations">Our Locations</a>
+        <a href="#services">Our Services</a>
+        <a href="#careers">Careers</a>
+        <a href="#feedback">Feedback</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Contact Form Section -->
+    <section id="contact-form">
+        <h1>Contact Us</h1>
+        <p>Have a question or need assistance with our IT solutions? Fill out the form below, and we’ll get back to you shortly.</p>
+        
+        <form action="submit_form.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+             <br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <br>
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+    </section>
+    <hr>
+
+    <!-- Our Locations Section -->
+    <section id="locations">
+        <h2>Our Locations</h2>
+        <p>We operate in key locations to provide top-notch IT services. Find us below:</p>
+        
+        <!-- Location 1 -->
+        <div class="location">
+            <h3>Varun IT Solutions - Hyderabad</h3>
+            <p>Address: Plot No. 45, Hitech City, Hyderabad, Telangana - 500081</p>
+            <p>Phone: <a href="tel:+914023456789">040 2345 6789</a></p>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.2650059920916!2d78.30489377376662!3d17.254409406625097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbe831da8cbad%3A0x4a90e51ab5b5a62c!2sVardhaman%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1732168101432!5m2!1sen!2sin" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We specialize in delivering the best IT solutions tailored for your business:</p>
+        <ul>
+            <li>Cloud Computing</li>
+            <li>Web Development</li>
+            <li>IT Consulting</li>
+            <li>Software Development</li>
+        </ul>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers">
+        <h2>Careers at Varun IT Solutions</h2>
+        <p>Join our team of IT professionals. Send your resume to <a href="mailto:careers@varunitsolutions.com">careers@varunitsolutions.com</a>.</p>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h2>We Value Your Feedback</h2>
+        <p>Your feedback helps us improve. Please share your thoughts below:</p>
+        
+        <form action="submit_feedback.php" method="post">
+            <label for="feedback-name">Name:</label>
+            <input type="text" id="feedback-name" name="name" required>
+
+            <label for="feedback-email">Email:</label>
+            <input type="email" id="feedback-email" name="email" required>
+
+            <label for="feedback-message">Feedback:</label>
+            <textarea id="feedback-message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Varun IT Solutions. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

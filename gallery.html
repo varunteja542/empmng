@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards Ceremony</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7e6;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #e87e00;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #e87e00;
+            padding: 10px 0;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #d74f00;
+        }
+
+        .header {
+            background-color: #e87e00;
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .award-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .award {
+            background-color: #ffcc80;
+            padding: 20px;
+            border-radius: 8px;
+            width: 25%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .award img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .award h3 {
+            margin-top: 15px;
+            color: #d74f00;
+        }
+
+        .award p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .event-carousel {
+            display: flex;
+            overflow: hidden;
+            margin-top: 60px;
+            padding: 20px 0;
+            justify-content: flex-start;
+            border-radius: 8px;
+            background-color: #f8f3e2;
+        }
+
+        .event-carousel img {
+            width: 300px;
+            height: 300px;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #e87e00;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .event-carousel-wrapper {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>Awards Ceremony 2024</h1>
+        <p>Celebrating Excellence in All Categories</p>
+    </div>
+
+    <section class="award-list">
+        <div class="award">
+            <img src="https://via.placeholder.com/200" alt="hck">
+            <h3>Rat hacker</h3>
+            <p>John Doe for "Hacking"</p>
+        </div>
+        <div class="award">
+            <img src="https://via.placeholder.com/200" alt="Best">
+            <h3>Security Championship-2024</h3>
+            <p>Jane Smith team for "Security Championship"</p>
+        </div>
+        <div class="award">
+            <img src="https://via.placeholder.com/200" alt="Best">
+            <h3>Best Developers</h3>
+            <p>The Great Adventure</p>
+        </div>
+    </section>
+
+    <div class="event-carousel">
+        <div class="event-carousel-wrapper">
+            <img src="https://via.placeholder.com/200x100" alt="Event 1">
+            <img src="https://via.placeholder.com/200x100" alt="Event 2">
+            <img src="https://via.placeholder.com/200x100" alt="Event 3">
+            <img src="https://via.placeholder.com/200x100" alt="Event 4">
+            <img src="https://via.placeholder.com/200x100" alt="Event 5">
+            <img src="https://via.placeholder.com/200x100" alt="Event 6">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Awards Ceremony | All Rights Reserved</p>
+    </div>
+</body>
+
+</html>

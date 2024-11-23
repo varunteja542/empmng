@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --maincolor: #2ec8a6;
+    --secondcolor: #f8a803;
+    --thirdcolor: #f4ab01;
+    --textcolor: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    z-index: 1000;
+    background-color: orangered !important;
+}
+
+.logo {
+    width: 150px;
+}
+.logo img {
+    width: 100%;
+}
+
+.navbar a {
+    color: var(--textcolor);
+    font-size: 1.7rem;
+    margin-left: 2.3rem;
+}
+
+.navbar a:hover {
+    color: var(--maincolor);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.main-home {
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/hero1.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.home-left-content span {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+}
+
+.home-left-content h2 {
+    font-size: 6rem;
+    font-weight: 700;
+    color:black;
+}
+
+.home-btn a {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1.4rem 4.8rem;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2.5rem;
+    background-color: var(--maincolor);
+}
+
+.home-btn .homebtnsec {
+    margin-left: 2rem;
+    background-color: var(--secondcolor);
+}
+
+.home-btn a:hover {
+    background-color: var(--thirdcolor);
+}
+.home {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/1.jpeg'); /* Background image */
+    background-size: cover; /* Ensure the background covers the whole area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: white; /* Text color to stand out on the background */
+    justify-content: space-between; /* Space out the left and right content */
+    padding: 20px;
+}
+
+.home-left-content {
+    max-width: 50%; /* Limit the width of the left content */
+    padding: 20px;
+    z-index: 1;
+}
+
+.home-right-content img {
+    max-width: 100%;
+    height: auto;
+    z-index: 0; /* Ensure the image in the right content stays below the text */
+}
+
+.home-btn a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00c176;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.homebtnsec {
+    background-color: #007BFF;
+}
+
+.main-about {
+    background-image: url('images/2.jpeg'); /* Background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 40px; /* Add some padding around the container */
+    color: black; /* Text color to stand out on the background */
+    font-weight: bold;
+}
+
+.about-heading {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inner-main-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.about-inner-content-left img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Control the size of the image */
+}
+
+.about-inner-content {
+    max-width: 50%;
+}
+
+.about-right-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-right-content p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.aboutsec-content {
+    font-style: italic;
+}
+
+.aboutbtn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.aboutbtn:hover {
+    background-color: #0056b3;
+}
+
+
+.technology{
+    padding: 3rem 7%;
+}
+
+.main-technology{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: -100px;
+}
+.inner-technology{
+    flex: 1 1 300px;
+    padding: 3rem 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: url(images/backgroung-pattern-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.inner-technology span{
+    width: 0;
+    height: 100%;
+    background-color: var(--maincolor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.5s;
+    
+}
+.inner-technology:hover span{
+    width: 100%;
+}
+
+
+/* .inner-technology:hover{
+    background: var(--maincolor);
+    
+} */
+
+.inner-technology:hover i{
+    
+    color: white;
+}
+.inner-technology:hover h2{
+    color: white;
+}
+.inner-technology:hover p{
+    color: white;
+}
+.inner-technology i{
+    font-size: 48px;
+    color: var(--maincolor);
+}
+
+.inner-technology h2{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.inner-technology p{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding: 1rem 0;
+}
+ .main-services {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+ .inner-services {
+    width: 30%;
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.service-icon, .inner-technology i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--maincolor);
+}
+
+.contact-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.whatsapp {
+    background-color: #00c176;
+}
+
+.phone {
+    background-color: #3b7da0;
+}
+
+.appointment {
+    background-color: #003366;
+}
+.main-footer{
+    padding: 4rem 7%;
+    background-color: var(--textcolor);
+}
+.footer-inner{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-content{
+    flex: 1 1 200px;
+    text-align: center;
+}
+.footer-content h1{
+    color: white;
+    font-size: 25px;
+}
+.link a{
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+

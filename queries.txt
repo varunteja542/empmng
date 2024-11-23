@@ -1,0 +1,70 @@
+CREATE TABLE empp (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(100),
+    department VARCHAR(100),
+    profile_pic BLOB,
+    password varchar(20)
+);
+
+ALTER TABLE empp
+ADD COLUMN birth_date DATE DEFAULT NULL,
+ADD COLUMN state_province VARCHAR(100) DEFAULT NULL,
+ADD COLUMN zip_postal_code VARCHAR(20) DEFAULT NULL,
+ADD COLUMN country VARCHAR(100) DEFAULT NULL,
+ADD COLUMN preferred_language VARCHAR(50) DEFAULT NULL;
+
+mysql> desc empp;
++--------------------+--------------+------+-----+---------+-------+
+| Field              | Type         | Null | Key | Default | Extra |
++--------------------+--------------+------+-----+---------+-------+
+| emp_id             | int          | NO   | PRI | NULL    |       |
+| name               | varchar(100) | YES  |     | NULL    |       |
+| position           | varchar(100) | YES  |     | NULL    |       |
+| department         | varchar(100) | YES  |     | NULL    |       |
+| profile_pic        | blob         | YES  |     | NULL    |       |
+| password           | varchar(20)  | YES  |     | NULL    |       |
+| email              | varchar(200) | YES  |     | NULL    |       |
+| birth_date         | date         | YES  |     | NULL    |       |
+| state_province     | varchar(100) | YES  |     | NULL    |       |
+| zip_postal_code    | varchar(20)  | YES  |     | NULL    |       |
+| country            | varchar(100) | YES  |     | NULL    |       |
+| preferred_language | varchar(50)  | YES  |     | NULL    |       |
++--------------------+--------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+INSERT INTO empp (emp_id, name, position, department, profile_pic,password,email)
+VALUES (101, 'P.Varun Teja', 'Software Engineer', 'Developer', LOAD_FILE('C:\Users\User\OneDrive\Desktop\empmng\webcontent\images\4.jpg'),'12345vt6','parshavenivarunteja@gmail.com');
+
+CREATE TABLE projects (
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_name VARCHAR(255) NOT NULL,
+    project_description TEXT,
+    project_status ENUM('ongoing', 'completed') DEFAULT 'ongoing',
+    project_updates TEXT,  -- Stores project updates as bullet points (can be formatted as text or JSON)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE project_emp (
+    project_id INT,
+    emp_id INT,
+    PRIMARY KEY (project_id, emp_id),
+    FOREIGN KEY (project_id) REFERENCES projects(project_id) ON DELETE CASCADE,
+    FOREIGN KEY (emp_id) REFERENCES empp(emp_id) ON DELETE CASCADE
+);
+CREATE TABLE running_projects (
+    project_id INT PRIMARY KEY,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id)
+    ON DELETE CASCADE
+);
+CREATE TABLE completed_projects (
+    project_id INT PRIMARY KEY,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id)
+    ON DELETE CASCADE
+);
+
+CREATE TABLE complaints (
+    cid INT AUTO_INCREMENT PRIMARY KEY,
+    complaint TEXT NOT NULL,
+    response TEXT,
+    emp_id INT,
+    FOREIGN KEY (emp_id) REFERENCES empp(emp_id) ON DELETE CASCADE
+);

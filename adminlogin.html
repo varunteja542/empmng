@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Login</title>
+  <style>
+    
+    
+Admin.css
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Form Styling */
+.login-container {
+    background-color: #e3f2fd;
+    padding: 40px;
+    padding-top: 60px; /* Additional top padding to avoid collision with back button */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.login-container label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Remove the default outline */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Home Button */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #4CAF50;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Back Button (inside container, smaller size) */
+.back {
+    background-color: #4CAF50;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.back a {
+    color: white;
+    text-decoration: none;
+}
+
+.back:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Home Button -->
+  <button class="home-button"><a href="index.html">HOME</a></button>
+
+  <div class="login-container">
+    <!-- Back Button inside login container (smaller) -->
+    <button class="back"><a href="doctor.html">Back</a></button>
+
+    <h2>Admin Login</h2>
+
+    <!-- Error message if login fails (hidden by default) -->
+    <div class="error-message" id="error-message" style="display: none;">
+      Invalid ID or Password. Please try again.
+    </div>
+    
+    <!-- Login Form -->
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <!-- Admin ID Field -->
+      <label for="admin_id">Admin ID</label>
+      <input type="text" id="admin_id" name="admin_id" placeholder="Enter Admin ID" required>
+      
+      <!-- Password Field -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter Password" required>
+      
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); 
+      const adminId = document.getElementById('admin_id').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+
+     
+      if (adminId === 'root' && password === 'root') {
+       
+        window.location.href = 'admindashboard.jsp';
+      } else {
+        
+        errorMessage.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
