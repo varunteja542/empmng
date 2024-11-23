@@ -1,0 +1,69 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+
+    <servlet>
+        <servlet-name>emplogin</servlet-name>
+        <servlet-class>emplogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>emplogin</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>empprof</servlet-name>
+        <servlet-class>empprof</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>empprof</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>project</servlet-name>
+        <servlet-class>project</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>project</servlet-name>
+        <url-pattern>/project</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>updateproject</servlet-name>
+        <servlet-class>updateproject</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateproject</servlet-name>
+        <url-pattern>/up</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>complete</servlet-name>
+        <servlet-class>complete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>complete</servlet-name>
+        <url-pattern>/complete</url-pattern>
+    </servlet-mapping>
+  <!--  <servlet>
+        <servlet-name>FetchProjects</servlet-name>
+        <servlet-class>FetchProjects</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FetchProjects</servlet-name>
+        <url-pattern>/FetchProjects</url-pattern>
+    </servlet-mapping>-->
+     <servlet>
+        <servlet-name>pastprojects</servlet-name>
+        <servlet-class>pastprojects</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pastprojects</servlet-name>
+        <url-pattern>/pastprojects</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>comp</servlet-name>
+        <servlet-class>comp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>comp</servlet-name>
+        <url-pattern>/comp</url-pattern>
+    </servlet-mapping>
+</web-app>
